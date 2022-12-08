@@ -1,4 +1,7 @@
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 def DP_after_DC(
@@ -153,3 +156,31 @@ def CheckDf(df: pd.DataFrame):
     )
     display(df[df.duplicated()].shape[0])
     display(df[df.duplicated()].head())
+
+
+
+# 환경
+import platform
+env = platform.uname().system
+
+workdir_path = r"."
+data_path = fr"{workdir_path}/data"
+if env == "Windows":
+    env = env
+    # if platform.uname().node == '':
+
+elif env == "Linux":
+    import sys
+
+    if 'google.colab' in sys.modules:
+        env = "Google Colab"
+
+        from google.colab import drive
+        drive.mount('/gdrive', force_remount=True)
+
+        workdir_path = r"/gdrive/MyDrive/[2022_0914~2023_0113]    Likelion AI School 7/_1_corazzon - Data Analytics with Python/_project/Monthly Daycon Psychological Prediction AI Competition"
+        data_path = fr"{workdir_path}/data"
+    elif:
+        import os
+        list(os.walk('/kaggle/'))[0][0] == '/kaggle/'
+        env = "Kaggle notebook"
