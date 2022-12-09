@@ -159,28 +159,44 @@ def CheckDf(df: pd.DataFrame):
 
 
 
-# 환경
-import platform
-env = platform.uname().system
+def sc_env_and_dir(dict_path=None):
+    if dict_path == None:
+        dict_path = {
+            "Windows": {"workdir_path": ".", "data_path": "data"},
+            "Google_Colab": {"workdir_path": "./gdrive/MyDrive", "data_path": "data"},
+            "Kaggle_notebook": {"workdir_path": "../", "data_path": "input"}
+        }
+    # 추후에 dict_path에 Kaggle_notebook이 없으면 추가하는 코드 추가 요망
+    import platform
+    from pprint import pprint
+    env = platform.uname().system
 
-workdir_path = r"."
-data_path = fr"{workdir_path}/data"
-if env == "Windows":
-    env = env
-    # if platform.uname().node == '':
+    if env == "Windows":
+        env = env
+        # if platform.uname().node == '':
 
-elif env == "Linux":
-    import sys
+    elif env == "Linux":
+        import sys
+        
+        # Google_Colab
+        if 'google.colab' in sys.modules:
+            env = "Google_Colab"
 
-    if 'google.colab' in sys.modules:
-        env = "Google Colab"
+            from google.colab import drive
+            drive.mount('/gdrive', force_remount=True)
 
-        from google.colab import drive
-        drive.mount('/gdrive', force_remount=True)
+            workdir_path = r"./gdrive/MyDrive/[2022_0914~2023_0113]    Likelion AI School 7/_1_corazzon - Data Analytics with Python/_project/Monthly Daycon Psychological Prediction AI Competition"
+            data_path = fr"{workdir_path}/data"
+        
+        # Kaggle_notebook
+        else:
+            import os
+            if list(os.walk('/kaggle/'))[0][1] == ['lib', 'input', 'working']:
+                env = "Kaggle_notebook"
 
-        workdir_path = r"/gdrive/MyDrive/[2022_0914~2023_0113]    Likelion AI School 7/_1_corazzon - Data Analytics with Python/_project/Monthly Daycon Psychological Prediction AI Competition"
-        data_path = fr"{workdir_path}/data"
-    elif:
-        import os
-        list(os.walk('/kaggle/'))[0][0] == '/kaggle/'
-        env = "Kaggle notebook"
+    workdir_path = dict_path[env]["workdir_path"]
+    data_path = f"{workdir_path}/{dict_path[env]['data_path']}"
+    
+    print("platform.uname()", platform.uname())
+    print(env)
+    print(data_path)
