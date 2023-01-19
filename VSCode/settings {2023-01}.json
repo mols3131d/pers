@@ -1,0 +1,28 @@
+{
+  "editor.fontSize": 16,
+  "[python]": {
+      "editor.formatOnType": true,
+      "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "files.autoSave": "afterDelay",
+  "editor.fontFamily": "'Fira Code', Consolas, 'D2coding', 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "notebook.lineNumbers": "on",
+  "breadcrumbs.enabled": false,
+  "notebook.consolidatedRunButton": true,
+  "explorer.confirmDelete": false,
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "material-icon-theme",
+  "python.formatting.provider": "black",
+  "notebook.output.textLineLimit": 200,
+  "editor.accessibilitySupport": "off",
+  "projectManager.git.baseFolders": [
+      "W:\\내 드라이브\\path\\git"
+  ],
+  "explorer.confirmDragAndDrop": false,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "black-formatter.args": [
+      "--line-length",
+      "119"
+  ]
+}
