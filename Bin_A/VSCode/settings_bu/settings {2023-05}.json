@@ -14,7 +14,7 @@
   "editor.accessibilitySupport": "off",
   "explorer.confirmDragAndDrop": false,
   "terminal.integrated.enableMultiLinePasteWarning": false,
-  "black-formatter.args": ["--line-length", "99"],
+  "black-formatter.args": ["--line-length", "80"],
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
   "isort.args": ["--profile", "black"],
   "editor.formatOnSave": true,
@@ -40,7 +40,7 @@
   "notebook.output.wordWrap": true,
   "oneDarkPro.vivid": true,
   "vscode-office.editorLanguage": "ko_KR",
-  "scribeai.ApiKey": "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",
+  "scribeai.ApiKey": "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",
   "workbench.editorAssociations": {
     "*.csv": "default"
   },
@@ -59,7 +59,7 @@
   "notebook.displayOrder": [
     "[\"application/vnd.code.notebook.stdout\", \"text/html\"]"
   ],
-  "autocommit.openAI.apiKey": "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",
+  "autocommit.openAI.apiKey": "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",
   "easycode.userEmail": "mols3131d@gmail.com",
-  "gptcommit.openAI.apiKey": "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"
+  "gptcommit.openAI.apiKey": "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"
 }
