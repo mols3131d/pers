@@ -1,16 +1,10 @@
-from collections import deque
+n = int(input())
+print(n)
 
-m, n = map(int, input().split())
-matrix = [list(map(int, input().split())) for _ in range(n)]
-print(m, n)
-print(matrix)
-
-res = 0
-dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
-
-queue = deque([])
-for i in range(n):
-    for j in range(m):
-        if matrix[i][j] == 1:
-            queue.append([i, j])
-print(queue)
+def fac(n):
+    if n == 1:
+        return 1
+    
+    i =2
+    d = {1: 1, 2: 2}
+    while i != n:
