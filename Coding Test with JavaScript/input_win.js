@@ -1,4 +1,4 @@
 const fs = require("fs");
-const inp = fs.readFileSync("input.txt").toString();
+const inp = fs.readFileSync("./Coding Test with JavaScript/input.txt").toString();
 
-consol.log(inp);
+console.log(inp);
