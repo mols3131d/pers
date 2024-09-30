@@ -1,3 +1,0 @@
-nicegui
-pytest-asyncio
-pytest-selenium

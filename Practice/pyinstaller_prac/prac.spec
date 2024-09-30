@@ -1,21 +1,16 @@
 # -*- mode: python ; coding: utf-8 -*-
 
-# import os
-# import sys
+import sys
+import sysconfig
 
-# site_packages_dir = os.path.join(sys.prefix, "lib", "site-packages")
-# sys.path.append("./modules")
-# sys.path.append(site_packages_dir)
-
+venv_site_packages = sysconfig.get_paths()["purelib"]
 
 a = Analysis(  # type: ignore
-    ["main.py"],
-    pathex=[],
+    ["main_nicegui.py"],
+    pathex=[venv_site_packages, "modules"],
     binaries=[],
-    datas=[
-        # ("./nicegui", "nicegui"),
-    ],
-    hiddenimports=["nicegui"],
+    datas=[(venv_site_packages+"/nicegui", "nicegui")],
+    hiddenimports=[],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
